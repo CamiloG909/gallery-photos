@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#1CCC5B" />
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.1.0/swiper-bundle.min.css"
+		integrity="sha512-N9qL2mrPqWKZSpzHWAALmr0z3G2WWIh/uhBOLnXK1ojHZPvSrNRe9/huWnjeGjkmG7pyXhRxn9EYDEWGqFSEfQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="shortcut icon" href="/assets/icon/favicon.ico" type="image/x-icon">
+	<title>Gallery photos</title>
+</head>
+
+<style>
+	.swiper-pagination-bullet-active {
+		background: #1CCC5B;
+	}
+</style>
+
+<body>
+	{{>header}}
+
+	<main class="container">
+		{{{ body }}}
+	</main>
+	{{!-- Swiper --}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.1.0/swiper-bundle.min.js"
+		integrity="sha512-S79HIfRIdej4hcNmID6Z1rrUoXCI2wJ3dq1S8RtY87Dw2Cnj13KR87JchjB+Fl3dTu7bxTqISRxh9ufm1WE4YA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		const swiper = new Swiper(".mySwiper", {
+			effect: "coverflow",
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: "auto",
+			coverflowEffect: {
+				rotate: 50,
+				stretch: 0,
+				depth: 100,
+				modifier: 1,
+				slideShadows: false,
+			},
+			pagination: {
+				el: ".swiper-pagination",
+			},
+		});
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css")
+
+$custom-black: #1B1B1B
+$borders: #686868
+$soft-gray: #4A4A4A
+$gray: #3B3B3B
+$dark-gray: #2B2B2B
+$soft-green: #75f0a0
+$green: #1CCC5B
+$dark-green: #117a37
+$soft-blue: #729cff
+$blue: #2D6BFF
+$dark-blue: #1F4AB2
+$soft-red: #d55a67
+$red: #d31225
+$dark-red: #850d19
+$shadow: 0px 4px 8px rgba(33, 13, 5, 0.16)
+$strong-shadow: 0 9px 32px -1px rgba(0, 0, 0, 0.5)
+$transition: all 0.3s ease
+$input-shadow: 0px 0px 0px 3px #1ccc5a41
+
+@mixin input-text()
+	margin: 10px 0
+	padding: 10px
+	inline-size: 100%
+	font-size: 1.5rem
+	font-weight: 500
+	border-radius: 5px
+	border: 1px solid transparent
+	background-color: $dark-gray
+	transition: $transition
+	outline: none
+	user-select: none
+	&:hover
+		border-color: $borders
+	&:focus
+		border-color: $green
+		-webkit-box-shadow: $input-shadow;
+		-moz-box-shadow: $input-shadow;
+		box-shadow: $input-shadow;
+
+@mixin btn($soft: $soft-green,$normal: $green,$dark: $dark-green)
+	padding: 10px
+	inline-size: 100%
+	font-size: 1.5rem
+	font-weight: bold
+	border-radius: 5px
+	border: 1px solid $soft
+	background-color: $normal
+	transition: $transition
+	cursor: pointer
+	user-select: none
+	&:hover
+		border-color: $normal
+		background-color: $dark
+	&:active
+		border-color: $dark
+
+::selection
+		color: white
+		background-color: $green
+
+// Scroll
+::-webkit-scrollbar
+	-webkit-appearance: none
+
+::-webkit-scrollbar:vertical
+	inline-size: 7px
+
+::-webkit-scrollbar-button:increment,::-webkit-scrollbar-button
+	display: none
+
+::-webkit-scrollbar:horizontal
+	block-size: 10px
+
+::-webkit-scrollbar-thumb
+	background-color: #ffffff44
+	border-radius: 20px
+
+::-webkit-scrollbar-thumb:hover
+	background-color: #ffffff7b
+
+::-webkit-scrollbar-track
+	margin: 0 3px
+	border-radius: 10px
+
+
+.swiper
+	width: 100%
+	padding-top: 50px
+	padding-bottom: 50px
+
+.swiper-slide
+	background-position: center
+	background-size: cover
+	max-width: 300px
+
+.swiper-slide img
+	display: block
+	width: 100%
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	font-family: 'Montserrat', sans-serif
+	color: white
+
+html
+	font-size: 10px
+
+body
+	position: relative
+	background-color: $custom-black
+
+.container
+	margin: 0 auto
+	inline-size: 95%
+	max-inline-size: 1450px
+
+.header
+	inline-size: 100%
+	block-size: 55px
+	box-shadow: $shadow
+	background-color: $gray
+	user-select: none
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 10px
+		block-size: 55px
+	&__img-container
+		block-size: 40px
+		img
+			block-size: 100%
+	&__redirections
+		font-size: 1.5rem
+		font-weight: 600
+		a
+			padding: 5px 10px
+			color: white
+			text-decoration: none
+			border-radius: 5px
+			transition: $transition
+			&:hover
+				background-color: #ffffff1b
+
+.index-title
+	font-size: 3rem
+	font-weight: bold
+	line-height: 7rem
+	color: white
+	text-align: center
+
+.section-manage-images
+	display: grid
+	grid-template-columns: 30% 70%
+	gap: 20px
+	margin-block-start: 20px
+
+.add-image
+	margin: 0 auto
+	padding: 20px
+	max-inline-size: 257px
+	max-inline-size: 500px
+	max-block-size: 355px
+	border-radius: 5px
+	box-shadow: $strong-shadow
+	background-color: $gray
+	&__title
+		font-size: 2.3rem
+		font-weight: bold
+		color: $green
+		text-align: center
+	&__input
+		@include input-text
+	&__textarea
+		@include input-text
+		block-size: 100px
+		resize: none
+	&__image
+		inline-size: 100%
+		&-label
+			display: block
+			margin-block-end: 10px
+			font-size: 1.5rem
+			font-weight: bold
+			cursor: pointer
+	&__btn
+		@include btn
+		margin-block-start: 10px
+
+.manage-images
+	margin: 0 auto
+	padding: 20px
+	inline-size: 100%
+	border-radius: 5px
+	box-shadow: $strong-shadow
+	background-color: $gray
+	&__title
+		display: grid
+		grid-template-columns: 1fr 1fr 120px
+		padding-block-end: 20px
+		font-size: 1.6rem
+		font-weight: bold
+		text-align: center
+		border-bottom: 1px solid $borders
+		user-select: none
+
+.card-image
+	display: grid
+	grid-template-columns: 1fr 1fr 120px
+	border-block-end: 1px solid $borders
+	p
+		padding: 10px
+		font-size: 1.4rem
+		font-weight: 500
+	&__borders
+		border-inline-start: 1px solid $borders
+		border-inline-end: 1px solid $borders
+	div
+		text-align: center
+	&__view
+		@include btn($soft-blue,$blue,$dark-blue)
+		margin: 5px 0
+		padding: 5px
+		inline-size: 100px
+		block-size: 30px
+		a
+			padding: 6px 14px
+			text-decoration: none
+	&__delete
+		@include btn($soft-red,$red,$dark-red)
+		margin: 5px 0
+		padding: 5px
+		inline-size: 100px
+		block-size: 30px
+		a
+			padding: 6px 8px
+			text-decoration: none
+
+@media (max-width: 1150px)
+	.section-manage-images
+		grid-template-columns: 100%
+		justify-content: center

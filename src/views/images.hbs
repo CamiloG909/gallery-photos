@@ -1,0 +1,12 @@
+<h1 class="index-title">All images</h1>
+
+<div class="swiper mySwiper">
+	<div class="swiper-wrapper">
+		{{#each photos}}
+		<div class="swiper-slide">
+			<img src="{{imgURL}}" alt="Slide">
+		</div>
+		{{/each}}
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
