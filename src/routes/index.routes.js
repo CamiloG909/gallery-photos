@@ -28,7 +28,9 @@ router.post("/add", async (req, res) => {
 	const { path } = req.file;
 
 	// Save image to Cloudinary
-	const result = await cloudinary.v2.uploader.upload(path);
+	const result = await cloudinary.v2.uploader.upload(path, {
+		folder: "gallery-photos",
+	});
 
 	const { public_id, url } = result;
 
